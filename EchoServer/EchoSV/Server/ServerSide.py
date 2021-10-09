@@ -1,6 +1,6 @@
 import socket
 import pickle
-from EchoSV.controller.IMC_Calc import IMC
+from controller.IMC_Calc import IMC
 
 HOST = socket.gethostname()
 PORT = 12345

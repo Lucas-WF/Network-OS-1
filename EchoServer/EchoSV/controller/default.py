@@ -1,5 +1,5 @@
 from tkinter import *
-from EchoSV.Server.Echo_server import *
+from Server.Echo_server import *
 from tkinter import messagebox
 
 

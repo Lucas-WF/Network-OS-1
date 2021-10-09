@@ -1,4 +1,4 @@
-from EchoSV.controller.default import *
+from controller.default import *
 
 
 def main():
