@@ -16,7 +16,7 @@ class Application:
         self.font_value4 = ("Copperplate Gothic Bold", "11", "italic", "bold")
         self.button_font = ("Rockwell Extra Bold", "12", "bold")
         self.myparent = parent
-        self.myparent.iconbitmap("C:\\Users\\User\\PycharmProjects\\EchoServer\\EchoSV\\images\\favicon.ico")
+        self.myparent.iconbitmap("./images/favicon.ico")
         self.myparent.title("ICM")
         self.myparent.geometry("650x450+400+100")
         self.myparent.resizable(width=False, height=False)
