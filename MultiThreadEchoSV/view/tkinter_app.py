@@ -5,24 +5,24 @@ from tkinter import messagebox
 
 class Application(tkinter.Tk):
 
-    def __init__(self, controller):
-        self.controller = controller
+    def __init__(self, master):
         super().__init__()
+        self.controller = master
         self.font = ("Copperplate Gothic Bold", "14", "italic", "bold")
         self.font_value4 = ("Copperplate Gothic Bold", "11", "italic", "bold")
         self.button_font = ("Rockwell Extra Bold", "12", "bold")
-        self.iconbitmap(r"C:\Users\User\PycharmProjects\MultiThreadEchoSV\view\images\favicon.ico")
+        self.iconbitmap(r"view/images/favicon.ico")
         self.title("ICM")
         self.geometry("650x450+400+100")
         self.resizable(width=False, height=False)
         self.protocol("WM_DELETE_WINDOW", self.closeapp)
 
-        self.background_image = PhotoImage(file=r"""C:\Users\User\PycharmProjects\MultiThreadEchoSV\view\images\wp4118594.png""")
+        self.background_image = PhotoImage(file=r"view/images/wp4118594.png")
         self.background_image = self.background_image.subsample(1, 1)
         self.background_label = Label(self, image=self.background_image)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        self.image = PhotoImage(file=r"C:\Users\User\PycharmProjects\MultiThreadEchoSV\view\images\logo.png")
+        self.image = PhotoImage(file=r"view/images/logo.png")
         self.image = self.image.subsample(4, 4)
         self.logo = Label(self.background_label, image=self.image, relief=SUNKEN)
         self.logo.pack(pady=15)
@@ -110,15 +110,16 @@ class Application(tkinter.Tk):
         self.value4.pack()
 
         self.calculate_button = Button(self.left_bottom_container, text="Calcular",
-                                       command=self.response, font=self.button_font, fg="#8131A2")
+                                       command=lambda: [self.controller.control_send(), self.change()],
+                                       font=self.button_font, fg="#8131A2")
         self.calculate_button.pack()
 
     def get_entry(self):
-        self.entryvar1.set("1"), self.entryvar2.set("1"), self.entryvar3.set("1")
         return self.entryvar1.get(), self.entryvar2.get(), self.entryvar3.get()
 
-    def response(self):
-        data = self.controller.send_msg()
+    def change(self):
+        data = self.controller.control_recv()
+        print(data)
         self.value4["text"] = data
 
     def main_v(self):
@@ -126,5 +127,6 @@ class Application(tkinter.Tk):
 
     def closeapp(self):
         if messagebox.askyesno("Sair", "Você tem certeza que deseja sair?"):
+            self.controller.close()
             self.destroy()
             exit()
