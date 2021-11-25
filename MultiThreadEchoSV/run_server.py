@@ -27,6 +27,7 @@ def handle_server_send(connect, address):
                 value = datadict[i]
                 imc = Imc(*value)
                 server.send(imc.calc(), connect)
+                datadict.pop(i)
 
 
 if __name__ == "__main__":
