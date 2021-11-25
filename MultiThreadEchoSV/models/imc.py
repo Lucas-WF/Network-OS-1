@@ -1,4 +1,4 @@
-class IMC:
+class Imc:
     def __init__(self, weight, height, age):
         self.__weight = weight
         self.__height = height

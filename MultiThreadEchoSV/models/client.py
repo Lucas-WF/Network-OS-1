@@ -1,7 +1,5 @@
 import socket
 import pickle
-import threading
-import time
 
 HOST = socket.gethostname()
 PORT = 12345
@@ -17,10 +15,6 @@ class Client:
     def send(self, data_i):
         data = pickle.dumps(data_i)
         self.socket.sendall(data)
-
-    def send_thread(self, data_t):
-        thread = threading.Thread(target=self.send, args=[data_t], daemon=True)
-        thread.start()
 
     def recve(self):
         data = self.socket.recv(1024)
