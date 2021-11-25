@@ -119,7 +119,7 @@ class Application(tkinter.Tk):
 
     def change(self):
         data = self.controller.control_recv()
-        print(data)
+        print("Dados recebidos com sucesso!")
         self.value4["text"] = data
 
     def main_v(self):
