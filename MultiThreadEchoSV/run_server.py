@@ -16,9 +16,12 @@ def accept():
 
 def handle_server_recv(connect, address):
     while True:
-        data = server.recve(conn=connect, addr=address)
-        datadict[address] = data
-
+        try:
+            data = server.recve(conn=connect, addr=address)
+            datadict[address] = data
+        except:
+            print(f"Cliente: {addr[0]} | {addr[1]}, desconectado.")
+            break
 
 def handle_server_send(connect, address):
     while True:
