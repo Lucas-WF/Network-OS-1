@@ -19,7 +19,7 @@ def handle_server_recv(connect, address):
         try:
             data = server.recve(conn=connect, addr=address)
             datadict[address] = data
-        except:
+        except EOFError:
             print(f"Cliente: {addr[0]} | {addr[1]}, desconectado.")
             break
 
