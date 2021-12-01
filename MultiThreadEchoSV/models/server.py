@@ -30,4 +30,4 @@ class Server:
         conn.sendall(data)
 
     def close(self):
-        self.socket.shutdown()
+        self.socket.close()
