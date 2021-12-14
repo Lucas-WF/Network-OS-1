@@ -1,24 +1,27 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Comprimento</title>
   </head>
     <body>
-
-        <form action="cgi-bin/comprimento.py" method="post">
-            Comprimento: <input type="text" name="Comprimento">
-            <select name="comprimentos" id="medidas_comp">
-                <option value="mm">Milímetro</option>
-                <option value="cm">Centímetro</option>
-                <option value="dm">Decímetro</option>
-                <option value="m">Metro</option>
-                <option value="dam">Decâmetro</option>
-                <option value="hm">Hectômetro</option>
-                <option value="km">Quilômetro</option>
-            </select>
-            <button>Enviar</button>
-        </form>
-
+	<div class="tabela" id="comp_table">
+            <form action="cgi-bin/comprimento.py" method="post">
+            	Comprimento: <input type="text" name="Comprimento">
+            	<select name="comprimentos" id="medidas_comp">
+               	    <option value="mm">Milímetro</option>
+                    <option value="cm">Centímetro</option>
+                    <option value="dm">Decímetro</option>
+                    <option value="m">Metro</option>
+                    <option value="dam">Decâmetro</option>
+                    <option value="hm">Hectômetro</option>
+                    <option value="km">Quilômetro</option>
+                </select>
+                <button>Enviar</button>
+            </form>
+	</div>
+	
+	<div class="tabela" id="massa_table">
         <form action="cgi-bin/massa.py" method="post">
             Massa: <input type="text" name="Massa">
             <select name="massas" id="medidas_massa">
@@ -32,7 +35,9 @@
             </select>
             <button>Enviar</button>
         </form>
-
+	</div>
+	
+	<div class="tabela" id="tempo_table">
         <form action="cgi-bin/tempo.py" method="post">
             Tempo: <input type="text" name="Tempo">
             <select name="tempos" id="medidas_temp">
@@ -44,6 +49,6 @@
             </select>
             <button>Enviar</button>
         </form>
-
+	</div>
     </body>
 </html>
