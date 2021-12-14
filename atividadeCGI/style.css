@@ -1,0 +1,10 @@
+.tabela {
+   width: 216px;
+   height: 276px;
+   margin: 0 39px 24px 0;
+   border: 1px dotted #000;
+   display: flex;
+   vertical-align: top;
+   padding: 5px;
+   background-color: #000;
+}
