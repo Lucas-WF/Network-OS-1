@@ -1,4 +1,4 @@
-from comprimento_model import Comprimento
+from area_model import Area
 import cgitb
 import cgi
 
@@ -6,11 +6,11 @@ cgitb.enable()
 
 form = cgi.FieldStorage()
 
-pin = form.getvalue("comprimento_p1")
-pout = form.getvalue("comprimento_p2")
-valor = form.getvalue("comprimento")
+pin = form.getvalue("area_p1")
+pout = form.getvalue("area_p2")
+valor = form.getvalue("area")
 
-comp = Comprimento(valor, pin, pout)
+comp = Area(valor, pin, pout)
 resultado = comp.calcular()
 
 print("Content-type:text/html\r\n\r\n")
