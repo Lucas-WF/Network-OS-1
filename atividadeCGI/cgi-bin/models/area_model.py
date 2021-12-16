@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*- 
+
 class Area:
     def __init__(self, entrada, medidain, medidaout) -> None:
         self.entrada = entrada

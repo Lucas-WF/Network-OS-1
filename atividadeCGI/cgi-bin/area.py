@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*- 
+
 from models.area_model import Area
 import cgitb
 import cgi
@@ -18,7 +20,18 @@ print("<html>")
 print("<head>")
 print('<meta charset="utf-8">')
 print("</head>")
-print("<body>")
-print(f"<h1>{resultado}</h1>")
+print("""<body> <style>
+h1{
+    margin-top: 20%;
+    text-align: center;
+}
+
+body{
+    background-color: #808080;
+}
+
+</style>
+""")
+print(f"<h1>O seu resultado foi: {resultado} {pout}</h1>")
 print("</body>")
 print("</html>")
