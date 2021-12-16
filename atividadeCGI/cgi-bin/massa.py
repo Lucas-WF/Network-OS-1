@@ -1,4 +1,4 @@
-from massa_model import Massa
+from models.massa_model import Massa
 import cgitb
 import cgi
 

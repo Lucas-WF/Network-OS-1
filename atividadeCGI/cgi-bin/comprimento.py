@@ -1,4 +1,4 @@
-from comprimento_model import Comprimento
+from models.comprimento_model import Comprimento
 import cgitb
 import cgi
 

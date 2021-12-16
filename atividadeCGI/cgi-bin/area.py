@@ -1,4 +1,4 @@
-from area_model import Area
+from models.area_model import Area
 import cgitb
 import cgi
 
